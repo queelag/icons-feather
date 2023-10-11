@@ -33,7 +33,7 @@ build({
 }).catch(() => process.exit(1))
 
 /**
- * ELEMENTS
+ * ASSETS
  */
 for (let asset of await glob('./src/assets/**/*.ts')) {
   /**
