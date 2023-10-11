@@ -1,8 +1,9 @@
 import { getSnakeCaseString } from '@aracna/core'
-import { appendFile, readFile, writeFile } from 'fs/promises'
+import { mkdir, readFile, rm, writeFile } from 'fs/promises'
 import { glob } from 'glob'
 
-await writeFile('src/index.ts', '')
+await rm('src/assets', { force: true, recursive: true })
+await mkdir('src/assets')
 
 for (let asset of await glob('assets/*.svg')) {
   let name, cname, svg
@@ -11,5 +12,5 @@ for (let asset of await glob('assets/*.svg')) {
   cname = 'ICON_FEATHER_' + getSnakeCaseString(name).toUpperCase()
   svg = await readFile(asset)
 
-  await appendFile('src/index.ts', `export const ${cname}: string = \`${svg}\`\n`)
+  await writeFile(`src/assets/${name}.ts`, `export const ${cname}: string = \`${svg}\``)
 }
