@@ -2,6 +2,7 @@ coverage
 declarations
 dist
 node_modules
+src/assets
 
 .DS_Store
 yarn-error.log

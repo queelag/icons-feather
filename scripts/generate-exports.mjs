@@ -9,7 +9,7 @@ for (let asset of await glob('assets/*.svg')) {
   let name, cname, svg
 
   name = asset.replace('assets/', '').replace('.svg', '')
-  cname = 'ICON_FEATHER_' + getSnakeCaseString(name).toUpperCase()
+  cname = 'ICON_F_' + getSnakeCaseString(name).toUpperCase()
   svg = await readFile(asset)
 
   await writeFile(`src/assets/${name}.ts`, `export const ${cname}: string = \`${svg}\``)
