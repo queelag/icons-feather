@@ -38,7 +38,7 @@
   "repository": "https://github.com/aracna/icons-feather",
   "scripts": {
     "build": "rm -rf dist && node esbuild.mjs && pnpm tsc",
-    "prepublish": "pnpm test && pnpm build && pnpm version patch && cp LICENSE package.json README.md dist",
+    "prepublish": "pnpm test && pnpm build && cp LICENSE package.json README.md dist",
     "test": "vitest run"
   },
   "sideEffects": false,
