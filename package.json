@@ -17,16 +17,9 @@
     "pnpm": ">=10"
   },
   "exports": {
-    ".": {
-      "types": "./index.d.ts",
-      "import": "./index.js",
-      "require": "./index.cjs"
-    },
-    "./assets/*": {
-      "types": "./assets/*.d.ts",
-      "import": "./assets/*.js",
-      "require": "./assets/*.cjs"
-    }
+    "types": "./index.d.ts",
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "license": "MIT",
   "main": "index.cjs",
