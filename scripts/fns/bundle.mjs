@@ -11,46 +11,25 @@ const options = {
 }
 
 export async function bundle() {
-  await Promise.all(
-    [
-      /**
-       * ESM
-       */
-      build({
-        ...options,
-        entryPoints: await glob('./src/**/*.ts'),
-        format: 'esm',
-        outdir: 'dist'
-      }),
-      /**
-       * CJS
-       */
-      build({
-        ...options,
-        bundle: true,
-        entryPoints: ['src/index.ts'],
-        format: 'cjs',
-        outfile: 'dist/index.cjs'
-      })
-    ]
-      /**
-       * Assets
-       */
-      .concat(
-        (await glob('./src/assets/**/*.ts')).map((asset) =>
-          Promise.all([
-            /**
-             * CJS
-             */
-            build({
-              ...options,
-              bundle: true,
-              entryPoints: [asset],
-              format: 'cjs',
-              outfile: asset.replace('src', 'dist').replace('.ts', '.cjs')
-            }).catch(() => process.exit(1))
-          ])
-        )
-      )
-  ).catch(() => process.exit(1))
+  await Promise.all([
+    /**
+     * ESM
+     */
+    build({
+      ...options,
+      entryPoints: await glob('./src/**/*.ts'),
+      format: 'esm',
+      outdir: 'dist'
+    }),
+    /**
+     * CJS
+     */
+    build({
+      ...options,
+      bundle: true,
+      entryPoints: ['src/index.ts'],
+      format: 'cjs',
+      outfile: 'dist/index.cjs'
+    })
+  ]).catch(() => process.exit(1))
 }
