@@ -17,6 +17,8 @@ jobs:
         run: corepack enable
       - name: Install Dependencies
         run: pnpm install && pnpm install -D @aracna/core@latest
+      - name: Build
+        run: pnpm build
       - name: Test Coverage
         run: pnpm vitest run --coverage
       - name: SonarQube Scan
