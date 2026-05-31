@@ -1,5 +1,5 @@
-![NPM](https://img.shields.io/npm/l/@aracna/icons-feather)
-![npm (scoped)](https://img.shields.io/npm/v/@aracna/icons-feather)
+![NPM](https://img.shields.io/npm/l/@aracna-icons/feather)
+![npm (scoped)](https://img.shields.io/npm/v/@aracna-icons/feather)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=queelag_icons-feather&metric=coverage)](https://sonarcloud.io/summary/new_code?id=queelag_icons-feather)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=queelag_icons-feather&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=queelag_icons-feather)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=queelag_icons-feather&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=queelag_icons-feather)
